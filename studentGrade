@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class StudentGradeCalculator {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number of Subjects: ");
+        float n=sc.nextInt();      
+        float sum=0;
+        for(int i=1;i<=n;i++){
+        System.out.print("Enter the marks of subject "+i+" : ");
+        float a=sc.nextInt();
+        sum=sum+a;
+        }
+        float average=sum/n;
+        System.out.println("The average percentage of "+n+" subjects is :"+average);
+    }
+}
