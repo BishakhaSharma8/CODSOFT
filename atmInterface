@@ -1,0 +1,60 @@
+import java.util.*;
+public class AtmInterface{
+    static int amt=70000;
+    public static void withdraw() {
+        System.out.print("Enter the amount: ");
+        Scanner sc=new Scanner(System.in);
+        int w=sc.nextInt();
+        amt=amt-w;
+        System.out.println("Please collect your cash");
+        System.out.println();
+        System.out.println("Do you want to chcek your balance?");
+        System.out.println("Press 1 for Yes and 0 for No");
+        int a=sc.nextInt();
+        if (a==1) {
+            System.out.println("Balance="+amt);
+        }
+        else if (a==0) {
+            System.out.println("Thank You!");
+        }
+        else 
+        System.out.println("Enter a valid option.");
+        return ;  
+    }
+    public static void deposit() {
+        System.out.print("Enter the amount: ");
+        Scanner sc=new Scanner(System.in);
+        int d=sc.nextInt();
+        //amt=amt+d;
+        System.out.println("Do you want to chcek your balance?");
+        System.out.println("Press 1 for Yes and 0 for No");
+        int a=sc.nextInt();
+        if (a==1) {
+            System.out.println("Balance="+amt);
+        }
+        else if (a==0) {
+            System.out.println("Thank You!");
+        }
+        else 
+        System.out.println("Enter a valid option.");
+         return;   
+    }
+    public static void checkBalance() {
+        System.out.println("Your Balance= "+amt);
+        return;  
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Insert your card");
+        System.out.println();
+        System.out.println("Ener 1 to withdraw money ");
+        System.out.println("Ener 2 to deposit money ");
+        System.out.println("Ener 3 to check balance");
+        int p=sc.nextInt();
+        if (p==1) deposit();
+        else if (p==2) withdraw();
+        else if (p==3) checkBalance();
+        else System.out.println("Enter a valid option.");
+        
+    }
+}
