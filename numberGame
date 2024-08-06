@@ -1,0 +1,75 @@
+import java.util.*;
+public class NumberGame {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("RULES FOR THE GAME:- ");
+        System.out.println("YOU HAVE 3 CHANCES TO GUESS THE CORRECT NUMBER.");
+        System.out.println("CORRECT GUESS IN 1st CHANCE WILL GIVE YOU 100 POINTS");
+        System.out.println("CORRECT GUESS IN 2nd CHANCE WILL GIVE YOU 75 POINTS");
+        System.out.println("CORRECT GUESS IN 3rd CHANCE WILL GIVE YOU 25 POINTS");
+        System.out.println("IF YOU'RE IN +,- 15 RANGE OF THE NUMBER --> TOO TOO HIGH OR TOO LOW");
+        System.out.println("IF YOU'RE IN +,- 5 RANGE OF THE NUMBER --> TOO CLOSE");
+        int score=0;
+        double random=Math.random();
+            int range=100;
+            int gnum=(int)(random*range);
+            //System.out.println("Generated Number= "+gnum);
+        for(int i=1;i<=3;i++){
+            System.out.println();
+            System.out.print("Enter the number: ");
+            int inputnum=sc.nextInt();
+            if (i==1) {
+            if(inputnum>gnum+15){
+                System.out.println("TOO HIGH");
+            }
+            else if(inputnum<gnum-15){
+                System.out.println("TOO LOW");                
+            }
+            else if((gnum-5 <=inputnum && inputnum < gnum) || (gnum+5 >=inputnum && inputnum > gnum)){
+                System.out.println("TOO CLOSE");
+            }
+            else if(inputnum==gnum){
+                System.out.println("YOU WON!!! :)");
+                score=100;
+                break;
+            }
+            else{
+                System.out.println("TRY AGAIN !!");                
+            }
+        }
+        if (i==2) {
+            if(inputnum>gnum+15){
+                System.out.println("TOO HIGH");                
+            }
+            else if(inputnum<gnum-15){
+                System.out.println("TOO LOW");                
+            }
+            else if((gnum-5 <=inputnum && inputnum < gnum) || (gnum+5 >=inputnum && inputnum > gnum)){
+                System.out.println("TOO CLOSE");
+            }
+            else if(inputnum==gnum){
+                System.out.println("YOU WON!!! :)");
+                score=75;
+                break;
+            }
+            else{
+                System.out.println("TRY AGAIN !!");                
+            }
+        }
+        else if(i==3){
+            if(inputnum==gnum){
+                System.out.println("YOU WON!!! :)");
+                score=25;
+            }
+            else if(inputnum!=gnum){
+                System.out.println("BETTER LUCK NEXT TIME!!! :(");
+                score=0;
+            }
+            System.out.println("Generated Number= "+gnum);
+        }
+        }
+        System.out.println();
+        System.out.println("YOUR SCORE= "+score);
+    }
+    
+}
